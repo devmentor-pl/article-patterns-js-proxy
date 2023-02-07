@@ -5,6 +5,6 @@ export default class Door extends DoorInterface {
 
     open() {
         this.#isOpened = true;
-        console.log(`Door is ${this.#isOpened ? 'opened 😁' : 'closed 😲'}`);
+        console.log(`Door is ${this.#isOpened && 'opened 😁'}`);
     }
 }

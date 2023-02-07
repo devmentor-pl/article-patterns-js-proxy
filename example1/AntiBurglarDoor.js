@@ -6,23 +6,23 @@ export default class AntiBurglarDoor extends DoorInterface {
 
     constructor(originalDoor) {
         super();
-        this.#originalDoor = originalDoor;
-
         if (!(originalDoor instanceof Door)) {
             throw new Error(
                 'The original door must be an instance of DoorInterface'
             );
         }
+
+        this.#originalDoor = originalDoor;
     }
 
     checkKeys() {
-        // nie mamy wlasciwych kluczy
+        // nie mamy właściwych kluczy
         const hasCorrectKeys = false;
         return hasCorrectKeys;
     }
 
     open() {
-        // jesli mamy wlasciwe klucze, to otworz drzwi
+        // jeśli mamy właściwe klucze, to otwórz drzwi
         if (this.checkKeys()) {
             this.#originalDoor.open();
             return;
